@@ -1,0 +1,91 @@
+TO SET EDITOR
+git config --global core.editor emacs
+git config --global core.editor vim
+
+cd => to go in any directory
+clear => to clear git bash used commands
+pwd => present working directory  
+mkdir => make new directory
+ls => list all the content in the folder
+ls -a => list hidden files also.
+git config --global user.name "HarshBhanot7"
+git config --global user.email "harshbhanot0@gmail.com"
+git config user.name => to check username
+git config user.email => to check email
+git init => Intialized empty git repository
+git add --a => Add all the files to staging area (--a = all)
+or
+git add . 
+git status => to check status 
+git commit -m "Intial commit"  
+git log => To know history of all the commits
+git log --oneline
+rm -rf .git => to delete all git data and stop tracking earlier files.
+rm -rf <name of file or folder> => to delete
+git clone <space> PASTE THE REPOSITORY LINK  <space> "RENAME THE REPO"
+touch FILE.extension => To add new file.
+touch .gitignore => to ignore files.
+//  Write the files with extensions in .gitignore which you want to hide.
+//  GTIIGNORE
+//  *.EXTENSION => to ignore all files of particular extension
+//  FOLDER/ => to hide all the folders of this name
+// /FOLDER/ => to hide only outer folders
+git diff => It compares working directory and staging area
+git diff --staged => it compares last commit with present staging area
+git commit -a -m "MESSAGE" => to skip the staging area.
+//  The Files Which are tracked or modified can go for direct commit.But Untrack  files can't go for direct commit,first we have to add that file to staging area.
+git rm FILE.EXTENSION => to delete any file.It automatically adds file to staging area.
+git mv FILE.EXTENSION NEWnAME.EXTENSION => To rename any file. and files get staged itself using this command.
+git rm --cached FILE.EXTENSION => To untrack any file and file will not be deleted. 
+git restore --staged FILE.EXTENSION =. TO remove file form the staging area.
+git restore FILE.EXTENSION => Discard all the changes in working directory.
+git checkout . => To Recover deleted file.But that file which have to be recoverd should not be in staging area.
+git checkout -- FILE.EXTENSION => This command will restore content of this file to last commit.
+git checkout -f => to restore all files to last commit.
+git log -p => This command tells both history of all the commits and also what is added or removed.
+git log -p -2 => This command tells both history of ONLY last 2 commits and also what is added or removed.
+git log --stat => This command will give short summary of number added or deleted files in commits.
+git log --pretty=oneline => Every commit in single line.
+git log --pretty=short => commits in very short. 
+git log --pretty=full => Tells the author of file in commits.
+git log --since=2.days => Shows commits of last two days/weeks/months/years.
+git log --pretty=format:"%h -- %an" => %h is hashtag of commit and %an is the name of person who did commit  
+git log --pretty=format:"%h -- %ae" => %h is hashtag of commit and %an is the email of person who did commit
+git log --oneline --graph
+git commit --amend => to edit commit.But changes in staging area will also get  merged in that commit.
+//  WHEN EDITOR WILL OPEN.
+//  FIRST PRESS I KEY
+//  THEN ESC KEY
+//  THEN COLON,W,Q,ENTER
+vi <File> => This will open the editor to edit particular file.
+cat <file> => This display all data or files in particular file.
+git cat
+git remote add origin <paste the SSH url of the github repositary> => to create the remote.
+git remote -v
+git push -u origin master
+git remote rm <name of the remote> => to delete the remote.
+git branch => TO check number of branches.
+git branch  BRANCHnAME => to make new branch.
+git checkout BRANCHnAME => To switch one branch to another.
+git checkout -b FILEnAME => This command will make a new branch and also switched to new branch.
+git merge BRANCHnAME => this will merge master branch and other new branch.But this command will run in master branch.
+git mergetool
+git branch -v => This command will display the total branches with hash of last commit in both branches and commit message will along with it.
+git branch --merged => Display present branches and merged branches.
+git branch --no-merged => display branches which are not merged.
+git branch -d BRANCHnAME => this will give error first if branch is not merged.if already merged then it will delete.
+git branch -D BRANCHnAME => it will delete the branch even if branch is not merged.
+git branch -m <newname> => to rename the branch. But we have to enter that branch first.
+git push -d origin <branchName> => This will delete branch on remote.
+git branch -r => display the branches present on github.
+git push origin <branchName>:<NewbranchName> => This make new branch only on remote, not on local and directories would remain same.
+
+git reset CHECKSUM --hard =>all commits above that checksum would be removed.
+git reset --hard Head~2 => to remove last 2 commits.
+git reset --hard Head => Head will come to the last commit and all files present only in staging area would be deletd.
+git reset CHECKSUM --mixed => all commits above that checksum would be removed from the commits and got untracked.if we commit again then, commits will become one commit
+git reset --mixed Head~2 => to remove last 2 commits and all files of last 2 commits will get utracked.if we commit again the 2 commits will become one commit.
+git reset --mixed Head => Head will come to the last commit and all files present only in staging area would go to working directory or files got untracked.
+git reset --soft Head~2 => to remove last 2 commits and all files of last 2 commits will got to staging area.if we commit again the 2 commits will become one commit.
+git reset CHECKSUM --soft => all commits above that checksum would be removed from the commits and got to the staging area.if we commit again then, commits will become one commit
+git revert CHECKSUM => this command will undo the chages of particular commit but not delete the commit log.
